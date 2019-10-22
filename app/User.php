@@ -36,4 +36,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * リレーション
+     * @return Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function addresses()
+    {
+        return $this->hasMany('App\UserAddress');
+    }
 }
